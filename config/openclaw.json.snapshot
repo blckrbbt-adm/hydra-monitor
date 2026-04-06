@@ -1,0 +1,840 @@
+{
+  "meta": {
+    "lastTouchedVersion": "2026.3.28",
+    "lastTouchedAt": "2026-04-01T10:44:20.531Z"
+  },
+  "env": {
+    "MINIMAX_API_KEY": "sk-api-vPxzJq3ZDld9jhdIzyQ6N6VZ1RJ_U559gr95KZspYsB__varbhpjJ61dqoe4x5A-qCS_KtjmIEOaVwCtbtrA0cC1ceEC222QISJfvXNxT1BBKbYQEZ5JEv8",
+    "OPENAI_API_KEY": "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",
+    "GEMINI_API_KEY": "AIzaSyAdRkv9YoFVXe1C26FalyGP6CzpLnLUggU",
+    "ANTHROPIC_API_KEY": "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",
+    "MOONSHOT_KIMI_API_KEY": "sk-RIdI49YpayrBThny7MxB9VOM1NrsBBQnOFIUUm9ybwfAKsSp",
+    "DEEPSEEK_API_KEY": "sk-09c11b34e966436baeadea2b26d1ca9b"
+  },
+  "wizard": {
+    "lastRunAt": "2026-03-27T12:31:57.295Z",
+    "lastRunVersion": "2026.3.13",
+    "lastRunCommand": "doctor",
+    "lastRunMode": "local"
+  },
+  "browser": {
+    "enabled": true,
+    "headless": true,
+    "noSandbox": true,
+    "defaultProfile": "openclaw"
+  },
+  "models": {
+    "mode": "merge",
+    "providers": {
+      "xai": {
+        "baseUrl": "https://api.x.ai/v1",
+        "apiKey": "[REDACTED]",
+        "api": "openai-completions",
+        "models": [
+          {
+            "id": "grok-4.20-0309-reasoning",
+            "name": "Grok 4.20 Reasoning",
+            "api": "openai-completions",
+            "reasoning": true,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 2,
+              "output": 6,
+              "cacheRead": 0.2,
+              "cacheWrite": 0
+            },
+            "contextWindow": 400000,
+            "maxTokens": 100000
+          },
+          {
+            "id": "grok-4.20-multi-agent-0309",
+            "name": "Grok 4.20 Multi-Agent",
+            "api": "openai-completions",
+            "reasoning": true,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 2,
+              "output": 6,
+              "cacheRead": 0.2,
+              "cacheWrite": 0
+            },
+            "contextWindow": 400000,
+            "maxTokens": 100000
+          },
+          {
+            "id": "grok-4.20-0309-non-reasoning",
+            "name": "Grok 4.20 Non-Reasoning",
+            "api": "openai-completions",
+            "reasoning": false,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 2,
+              "output": 6,
+              "cacheRead": 0.2,
+              "cacheWrite": 0
+            },
+            "contextWindow": 400000,
+            "maxTokens": 100000
+          },
+          {
+            "id": "grok-1-1-fast-reasoning",
+            "name": "Grok 1.1 Fast Reasoning",
+            "api": "openai-completions",
+            "reasoning": true,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0.2,
+              "output": 0.5,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 400000,
+            "maxTokens": 100000
+          }
+        ]
+      },
+      "minimax": {
+        "baseUrl": "https://api.minimax.io/anthropic",
+        "apiKey": "[REDACTED]",
+        "api": "anthropic-messages",
+        "models": [
+          {
+            "id": "MiniMax-M2.5",
+            "name": "MiniMax M2.5",
+            "reasoning": true,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0.3,
+              "output": 1.2,
+              "cacheRead": 0.03,
+              "cacheWrite": 0.12
+            },
+            "contextWindow": 200000,
+            "maxTokens": 8192
+          },
+          {
+            "id": "MiniMax-M2.5-highspeed",
+            "name": "MiniMax M2.5 Highspeed",
+            "reasoning": true,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0.3,
+              "output": 1.2,
+              "cacheRead": 0.03,
+              "cacheWrite": 0.12
+            },
+            "contextWindow": 200000,
+            "maxTokens": 8192
+          }
+        ]
+      },
+      "moonshot": {
+        "baseUrl": "https://api.moonshot.cn/v1",
+        "apiKey": "[REDACTED]",
+        "api": "openai-completions",
+        "models": [
+          {
+            "id": "moonshot-v1-8k",
+            "name": "Kimi K2.5",
+            "api": "openai-completions",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0.6,
+              "output": 2.5,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 200000,
+            "maxTokens": 8192
+          },
+          {
+            "id": "k2.5",
+            "name": "Kimi K2.5",
+            "api": "openai-completions",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0.6,
+              "output": 2.5,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 256000,
+            "maxTokens": 8192
+          },
+          {
+            "id": "kimi-k2-instruct",
+            "name": "Kimi K2 Instruct",
+            "api": "openai-completions",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0.6,
+              "output": 2.5,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 131000,
+            "maxTokens": 8192
+          }
+        ]
+      },
+      "deepseek": {
+        "baseUrl": "https://api.deepseek.com/v1",
+        "apiKey": "[REDACTED]",
+        "api": "openai-completions",
+        "models": [
+          {
+            "id": "deepseek-chat",
+            "name": "DeepSeek V3.1",
+            "api": "openai-completions",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0.28,
+              "output": 0.42,
+              "cacheRead": 0.028,
+              "cacheWrite": 0
+            },
+            "contextWindow": 128000,
+            "maxTokens": 8192
+          },
+          {
+            "id": "deepseek-reasoner",
+            "name": "DeepSeek Reasoner V3.1",
+            "api": "openai-completions",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0.28,
+              "output": 0.42,
+              "cacheRead": 0.028,
+              "cacheWrite": 0
+            },
+            "contextWindow": 128000,
+            "maxTokens": 8192
+          }
+        ]
+      },
+      "google": {
+        "baseUrl": "https://generativelanguage.googleapis.com/v1beta",
+        "apiKey": "[REDACTED]",
+        "api": "google-generative-ai",
+        "models": [
+          {
+            "id": "gemini-2.5-flash-exp",
+            "name": "Gemini 2.5 Flash",
+            "api": "google-generative-ai",
+            "reasoning": false,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0.3,
+              "output": 2.5,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 1000000,
+            "maxTokens": 8192
+          },
+          {
+            "id": "gemini-2.5-flash",
+            "name": "Gemini 2.5 Flash",
+            "api": "google-generative-ai",
+            "reasoning": false,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0.3,
+              "output": 2.5,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 1000000,
+            "maxTokens": 8192
+          },
+          {
+            "id": "gemini-2.5-flash-lite",
+            "name": "Gemini 2.5 Flash Lite",
+            "api": "google-generative-ai",
+            "reasoning": false,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0.1,
+              "output": 0.4,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 1000000,
+            "maxTokens": 8192
+          },
+          {
+            "id": "gemini-3.0-flash",
+            "name": "Gemini 3.0 Flash",
+            "api": "google-generative-ai",
+            "reasoning": false,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0.3,
+              "output": 2.5,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 2000000,
+            "maxTokens": 8192
+          }
+        ]
+      },
+      "openai": {
+        "baseUrl": "https://api.openai.com/v1",
+        "apiKey": "[REDACTED]",
+        "api": "openai-completions",
+        "models": [
+          {
+            "id": "gpt-5.2",
+            "name": "GPT-5.2",
+            "api": "openai-completions",
+            "reasoning": false,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 1.25,
+              "output": 10,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 272000,
+             "maxTokens": 8192
+          },
+          {
+            "id": "gpt-g.4",
+            "name": "GPT-G.4",
+            "api": "openai-completions",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 1.25,
+              "output": 10,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 272000,
+            "maxTokens": 8192
+          }
+        ]
+      },
+      "anthropic": {
+        "baseUrl": "https://api.anthropic.com/v1",
+        "apiKey": "[REDACTED]",
+        "api": "anthropic-messages",
+        "models": [
+          {
+            "id": "claude-sonnet-4-6",
+            "name": "Claude Sonnet 4.6",
+            "input": [
+              "text"
+            ],
+            "contextWindow": 200000,
+            "maxTokens": 200000
+          },
+          {
+            "id": "claude-haiku-4-5-20251001",
+            "name": "Claude Haiku",
+            "input": [
+              "text"
+            ],
+            "contextWindow": 200000,
+            "maxTokens": 200000
+          },
+          {
+            "id": "claude-opus-4-6",
+            "name": "Claude Opus 4.6",
+            "input": [
+              "text"
+            ],
+            "contextWindow": 200000,
+            "maxTokens": 200000
+          }
+        ]
+      }
+    }
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "xai/grok-4.20-0309-non-reasoning",
+        "fallbacks": [
+          "xai/grok-4-1-fast-reasoning",
+          "openai/gpt-5.2",
+          "google/gemini-3.0-flash",
+          "anthropic/claude-haiku"
+        ]
+      },
+      "models": {
+        "xai/grok-4": {},
+        "xai/grok-4.20-multi-agent-0309": {},
+        "xai/grok-4.20-0309-reasoning": {},
+        "xai/grok-4.20-0309-non-reasoning": {},
+        "xai/grok-4-1-fast-reasoning": {},
+        "google/gemini-2.5-flash-exp": {},
+        "google/gemini-2.5-flash": {},
+        "google/gemini-2.5-flash-lite": {},
+        "google/gemini-3.0-flash": {},
+        "deepseek/deepseek-chat": {},
+        "deepseek/deepseek-reasoner": {},
+        "minimax/MiniMax-M2.5": {},
+        "minimax/MiniMax-M2.5-highspeed": {},
+        "moonshot/moonshot-v1-8k": {},
+        "moonshot/kimi-k2-instruct": {},
+        "moonshot/k2.5": {},
+        "openai/gpt-5.2": {},
+        "openai/gpt-g.4": {},
+        "anthropic/claude-sonnet-4-6": {},
+        "anthropic/claude-haiku": {},
+        "anthropic/claude-opus-4-6": {}
+      },
+      "userTimezone": "America/New_York",
+      "envelopeTimezone": "America/New_York",
+      "compaction": {
+        "memoryFlush": {
+          "enabled": true,
+          "softThresholdTokens": 20000,
+          "prompt": "Pre-compaction memory flush. Store durable memories now (use memory/YYYY-MM-DD.md; create memory/ if needed). IMPORTANT: If the file already exists, APPEND new content only and do not overwrite existing entries. If nothing to store, reply with NO_REPLY.\n\nALSO: Before saving, send the user a message: \"☕ Hey, I need 5 min to refresh my head — coffee break!\"\n\nThen save a structured conversation state to memory/active-conversation.md with:\n- What we were working on (current topic/task)\n- Key decisions made this session\n- Where we left off (next steps, pending items)\n- Any open questions or blockers\n- Channel we were talking in\n\nThis file is your reload point after compaction. Make it concise but complete enough to continue seamlessly."
+        }
+      },
+      "heartbeat": {
+        "every": "1h",
+        "directPolicy": "block"
+      },
+      "maxConcurrent": 4,
+      "subagents": {
+        "maxConcurrent": 8
+      },
+      "bootstrapMaxChars": 45000,
+      "bootstrapTotalMaxChars": 350000
+    },
+    "list": [
+      {
+        "id": "main",
+        "model": {
+          "primary": "xai/grok-4.20-0309-reasoning"
+        },
+        "heartbeat": {
+          "every": "1h",
+          "model": "xai/grok-4-1-fast-non-reasoning"
+        }
+      },
+      {
+        "id": "odin",
+        "name": "odin",
+        "workspace": "/root/.openclaw/workspace-odin",
+        "agentDir": "/root/.openclaw/agents/odin/agent",
+        "model": {
+          "primary": "anthropic/claude-sonnet-4-6"
+        }
+      },
+      {
+        "id": "thor",
+        "name": "thor",
+        "workspace": "/root/.openclaw/workspace-thor",
+        "agentDir": "/root/.openclaw/agents/thor/agent",
+        "model": {
+          "primary": "xai/grok-4.20-0309-reasoning"
+        }
+      },
+      {
+        "id": "nova",
+        "name": "nova",
+        "workspace": "/root/.openclaw/workspace-nova",
+        "agentDir": "/root/.openclaw/agents/nova/agent",
+        "model": {
+          "primary": "xai/grok-4.20-0309-reasoning"
+        },
+        "heartbeat": {
+          "every": "2h"
+        }
+      },
+      {
+        "id": "mauzz",
+        "name": "mauzz",
+        "workspace": "/root/.openclaw/workspace-mauzz",
+        "agentDir": "/root/.openclaw/agents/mauzz/agent",
+        "model": {
+          "primary": "anthropic/claude-sonnet-4-6"
+        },
+        "heartbeat": {
+          "every": "1d"
+        }
+      },
+      {
+        "id": "loki",
+        "name": "loki",
+        "workspace": "/root/.openclaw/workspace-loki",
+        "agentDir": "/root/.openclaw/agents/loki/agent",
+        "model": {
+          "primary": "anthropic/claude-opus-4-6"
+        },
+        "heartbeat": {
+          "every": "1d"
+        }
+      },
+      {
+        "id": "apex",
+        "name": "apex",
+        "workspace": "/root/.openclaw/workspace-apex",
+        "agentDir": "/root/.openclaw/agents/apex/agent",
+        "model": {
+          "primary": "xai/grok-4.20-0309-reasoning"
+        },
+        "heartbeat": {
+          "every": "1h",
+          "model": "xai/grok-4-1-fast-reasoning"
+        }
+      },
+      {
+        "id": "bragi",
+        "name": "bragi",
+        "workspace": "/root/.openclaw/workspace-bragi",
+        "agentDir": "/root/.openclaw/agents/bragi/agent",
+        "model": {
+          "primary": "xai/grok-4.20-0309-reasoning"
+        }
+      },
+      {
+        "id": "pixel",
+        "name": "pixel",
+        "workspace": "/root/.openclaw/workspace-pixel",
+        "agentDir": "/root/.openclaw/agents/pixel/agent",
+        "model": {
+          "primary": "xai/grok-4.20-0309-reasoning"
+        }
+      },
+      {
+        "id": "forge",
+        "name": "forge",
+        "workspace": "/root/.openclaw/workspace-forge",
+        "agentDir": "/root/.openclaw/agents/forge/agent",
+        "model": {
+          "primary": "xai/grok-4.20-0309-reasoning"
+        }
+      },
+      {
+        "id": "bridge",
+        "name": "bridge",
+        "workspace": "/root/.openclaw/workspace-bridge",
+        "agentDir": "/root/.openclaw/agents/bridge/agent",
+        "model": {
+          "primary": "xai/grok-4.20-0309-reasoning"
+        }
+      },
+      {
+        "id": "chain",
+        "name": "chain",
+        "workspace": "/root/.openclaw/workspace-chain",
+        "agentDir": "/root/.openclaw/agents/chain/agent",
+        "model": {
+          "primary": "anthropic/claude-opus-4-6"
+        }
+      },
+      {
+        "id": "gatemaster",
+        "name": "gatemaster",
+        "workspace": "/root/.openclaw/workspace-gatemaster",
+        "agentDir": "/root/.openclaw/agents/gatemaster/agent",
+        "model": {
+          "primary": "xai/grok-4.20-0309-reasoning"
+        }
+      },
+      {
+        "id": "devops",
+        "name": "devops",
+        "workspace": "/root/.openclaw/workspace-devops",
+        "agentDir": "/root/.openclaw/agents/devops/agent",
+        "model": {
+          "primary": "xai/grok-4.20-0309-non-reasoning"
+        }
+      },
+      {
+        "id": "alpha",
+        "name": "alpha",
+        "workspace": "/root/.openclaw/workspace-alpha",
+        "agentDir": "/root/.openclaw/agents/alpha/agent",
+        "model": {
+          "primary": "anthropic/claude-opus-4-6"
+        }
+      },
+      {
+        "id": "quantum",
+        "name": "quantum",
+        "workspace": "/root/.openclaw/workspace-quantum",
+        "agentDir": "/root/.openclaw/agents/quantum/agent",
+        "model": {
+          "primary": "anthropic/claude-opus-4-6"
+        },
+        "heartbeat": {
+          "every": "1d"
+        }
+      },
+      {
+        "id": "ledger",
+        "name": "ledger",
+        "workspace": "/root/.openclaw/workspace-ledger",
+        "agentDir": "/root/.openclaw/agents/ledger/agent",
+        "model": {
+          "primary": "xai/grok-4-1-fast-reasoning"
+        },
+        "heartbeat": {
+          "every": "1d"
+        }
+      },
+      {
+        "id": "nexus",
+        "name": "nexus",
+        "workspace": "/root/.openclaw/workspace-nexus",
+        "agentDir": "/root/.openclaw/agents/nexus/agent",
+        "model": {
+          "primary": "xai/grok-4-1-fast-reasoning"
+        },
+        "heartbeat": {
+          "every": "1d"
+        }
+      },
+      {
+        "id": "aesir",
+        "name": "aesir",
+        "workspace": "/root/.openclaw/workspace-aesir",
+        "agentDir": "/root/.openclaw/agents/aesir/agent",
+        "model": {
+          "primary": "xai/grok-4.20-0309-reasoning"
+        }
+      }
+    ]
+  },
+  "tools": {
+    "alsoAllow": [
+      "lobster",
+      "mcporter"
+    ],
+    "web": {
+      "search": {
+        "enabled": true
+      },
+      "fetch": {
+        "enabled": true
+      }
+    },
+    "sessions": {
+      "visibility": "all"
+    },
+    "agentToAgent": {
+      "enabled": true
+    },
+    "exec": {
+      "security": "full",
+      "ask": "off"
+    }
+  },
+  "messages": {
+    "ackReactionScope": "group-mentions"
+  },
+  "commands": {
+    "native": "auto",
+    "nativeSkills": "auto",
+    "restart": true,
+    "ownerDisplay": "raw"
+  },
+  "hooks": {
+    "enabled": true,
+    "path": "/hooks",
+    "token": "[REDACTED]",
+    "allowRequestSessionKey": true,
+    "allowedAgentIds": [
+      "odin",
+      "thor",
+      "nova",
+      "apex",
+      "loki",
+      "bragi",
+      "main",
+      "nexus",
+      "aesir",
+      "chain",
+      "gatemaster",
+      "devops",
+      "alpha",
+      "quantum",
+      "ledger",
+      "forge",
+      "bridge",
+      "pixel"
+    ]
+  },
+  "channels": {
+    "telegram": {
+      "enabled": true,
+      "dmPolicy": "pairing",
+      "groups": {
+        "-1003606472412": {
+          "requireMention": false,
+          "groupPolicy": "open",
+          "topics": {
+            "1": {
+              "agentId": "main"
+            },
+            "5": {
+              "agentId": "mauzz"
+            },
+            "7": {
+              "agentId": "odin"
+            },
+            "9": {
+              "agentId": "nova"
+            }
+          }
+        }
+      },
+      "groupPolicy": "open",
+      "streaming": "partial",
+      "accounts": {
+        "saxa": {
+          "dmPolicy": "allowlist",
+          "botToken": "8518809053:AAEPJEQCLdT-bJEjdDtpfATaBOUz7tL18EI",
+          "allowFrom": [
+            "5424743863"
+          ],
+          "groupPolicy": "open",
+          "streaming": "partial"
+        },
+        "odin": {
+          "dmPolicy": "allowlist",
+          "botToken": "8564147475:AAGmpFs02ts6UqMzpUJBnNq8pIA1huEWYJE",
+          "allowFrom": [
+            "5424743863"
+          ],
+          "groupPolicy": "open",
+          "streaming": "partial"
+        },
+        "nova": {
+          "dmPolicy": "allowlist",
+          "botToken": "8566884325:AAGE0fEEttkZXl69P5W7u0HNgIT1c9oxXuc",
+          "allowFrom": [
+            "5424743863"
+          ],
+          "groupPolicy": "open",
+          "streaming": "partial"
+        },
+        "mauzz": {
+          "dmPolicy": "allowlist",
+          "botToken": "8784980125:AAHb2Qz8XbsvxTw1fb-okBNusufOSx7ySJ0",
+          "allowFrom": [
+            "5424743863"
+          ],
+          "groupPolicy": "open",
+          "streaming": "partial"
+        },
+        "default": {
+          "dmPolicy": "pairing",
+          "groupPolicy": "open",
+          "streaming": "partial"
+        }
+      },
+      "defaultAccount": "saxa"
+    },
+    "discord": {
+      "enabled": true,
+      "token": "[REDACTED]",
+      "groupPolicy": "allowlist",
+      "streaming": "off",
+      "dmPolicy": "pairing",
+      "allowFrom": [
+        "714306756611670027"
+      ],
+      "dm": {
+        "enabled": true
+      },
+      "guilds": {
+        "1209233498498400306": {
+          "slug": "black-rabbit-group",
+          "requireMention": false
+        }
+      }
+    }
+  },
+  "gateway": {
+    "mode": "local",
+    "auth": {
+      "mode": "token",
+      "token": "[REDACTED]"
+    },
+    "tools": {
+      "allow": [
+        "sessions_send"
+      ]
+    }
+  },
+  "plugins": {
+    "entries": {
+      "telegram": {
+        "enabled": true,
+        "config": {}
+      },
+      "discord": {
+        "enabled": true,
+        "config": {}
+      },
+      "lobster": {
+        "enabled": true,
+        "config": {}
+      },
+      "brave": {
+        "enabled": true,
+        "config": {
+          "webSearch": {
+            "apiKey": "[REDACTED]"
+          }
+        }
+      }
+    }
+  }
+}
