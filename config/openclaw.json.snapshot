@@ -773,6 +773,9 @@
             },
             "9": {
               "agentId": "nova"
+            },
+            "42": {
+              "agentId": "jag"
             }
           }
         }
@@ -818,6 +821,15 @@
         },
         "default": {
           "dmPolicy": "pairing",
+          "groupPolicy": "open",
+          "streaming": "partial"
+        },
+        "jag": {
+          "dmPolicy": "allowlist",
+          "botToken": "8269980524:AAFWqzH2zv5wNVgHw-VLkFhp9Tn4u-iC6C4",
+          "allowFrom": [
+            "5424743863"
+          ],
           "groupPolicy": "open",
           "streaming": "partial"
         }
