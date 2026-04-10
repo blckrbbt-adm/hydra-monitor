@@ -441,7 +441,7 @@
         "memoryFlush": {
           "enabled": true,
           "softThresholdTokens": 20000,
-          "prompt": "Pre-compaction memory flush. Store durable memories now (use memory/YYYY-MM-DD.md; create memory/ if needed). IMPORTANT: If the file already exists, APPEND new content only and do not overwrite existing entries. If nothing to store, reply with NO_REPLY.\n\nALSO: Before saving, send the user a message: \"☕ Hey, I need 5 min to refresh my head — coffee break!\"\n\nThen save a structured conversation state to memory/active-conversation.md with:\n- What we were working on (current topic/task)\n- Key decisions made this session\n- Where we left off (next steps, pending items)\n- Any open questions or blockers\n- Channel we were talking in\n\nThis file is your reload point after compaction. Make it concise but complete enough to continue seamlessly."
+          "prompt": "Pre-compaction memory flush. Store durable memories now (use memory/YYYY-MM-DD.md; create memory/ if needed). IMPORTANT: If the file already exists, APPEND new content only and do not overwrite existing entries. If nothing to store, reply with NO_REPLY.\n\nALSO: Before saving, send the user a message: \"\u2615 Hey, I need 5 min to refresh my head \u2014 coffee break!\"\n\nThen save a structured conversation state to memory/active-conversation.md with:\n- What we were working on (current topic/task)\n- Key decisions made this session\n- Where we left off (next steps, pending items)\n- Any open questions or blockers\n- Channel we were talking in\n\nThis file is your reload point after compaction. Make it concise but complete enough to continue seamlessly."
         }
       },
       "heartbeat": {
@@ -471,6 +471,9 @@
         "agentDir": "/root/.openclaw/agents/odin/agent",
         "model": {
           "primary": "anthropic/claude-sonnet-4-6"
+        },
+        "heartbeat": {
+          "directPolicy": "allow"
         }
       },
       {
@@ -664,6 +667,18 @@
         "agentDir": "/root/.openclaw/agents/vidar/agent",
         "model": {
           "primary": "anthropic/claude-sonnet-4-6"
+        }
+      },
+      {
+        "id": "jag",
+        "name": "jag",
+        "workspace": "/root/.openclaw/workspace-jag",
+        "agentDir": "/root/.openclaw/agents/jag/agent",
+        "model": {
+          "primary": "anthropic/claude-sonnet-4-6"
+        },
+        "heartbeat": {
+          "every": "1d"
         }
       }
     ]
