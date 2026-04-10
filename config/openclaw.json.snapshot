@@ -1,7 +1,7 @@
 {
   "meta": {
     "lastTouchedVersion": "2026.3.28",
-    "lastTouchedAt": "2026-04-09T15:59:46.884Z"
+    "lastTouchedAt": "2026-04-10T12:56:01.789Z"
   },
   "env": {
     "MINIMAX_API_KEY": "sk-api-vPxzJq3ZDld9jhdIzyQ6N6VZ1RJ_U559gr95KZspYsB__varbhpjJ61dqoe4x5A-qCS_KtjmIEOaVwCtbtrA0cC1ceEC222QISJfvXNxT1BBKbYQEZ5JEv8",
@@ -685,7 +685,10 @@
       "visibility": "all"
     },
     "agentToAgent": {
-      "enabled": true
+      "enabled": true,
+      "allow": [
+        "*"
+      ]
     },
     "exec": {
       "security": "full",
