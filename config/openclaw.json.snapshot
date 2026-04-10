@@ -854,6 +854,15 @@
           "requireMention": false
         }
       }
+    },
+    "slack": {
+      "enabled": true,
+      "accounts": {
+        "jag": {
+          "botToken": "xoxb-10578400195558-10882084456243-XqwPfOqxokP6kWuRx8MiIGlX",
+          "appToken": "xapp-1-A0AS125FETF-10888497554914-e33777ce8ac0057cb5acafcb28917fbefe2868b4aa8d04587e2557dd08136388"
+        }
+      }
     }
   },
   "gateway": {
@@ -891,5 +900,14 @@
         }
       }
     }
-  }
+  },
+  "bindings": [
+    {
+      "agentId": "jag",
+      "match": {
+        "channel": "slack",
+        "accountId": "jag"
+      }
+    }
+  ]
 }
