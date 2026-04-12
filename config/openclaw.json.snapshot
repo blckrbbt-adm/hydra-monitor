@@ -908,6 +908,29 @@
         "channel": "slack",
         "accountId": "jag"
       }
+    },
+    {
+      "agentId": "odin",
+      "match": {
+        "channel": "telegram",
+        "accountId": "odin"
+      }
     }
-  ]
+  ],
+  "memory": {
+    "backend": "qmd",
+    "citations": "auto",
+    "qmd": {
+      "command": "node /root/.openclaw/workspace/qmd/dist/qmd.js",
+      "includeDefaultMemory": true,
+      "update": {
+        "interval": "5m",
+        "waitForBootSync": false
+      },
+      "limits": {
+        "maxResults": 6,
+        "maxSnippetChars": 700
+      }
+    }
+  }
 }
