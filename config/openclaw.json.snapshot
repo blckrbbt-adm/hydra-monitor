@@ -474,6 +474,32 @@
         },
         "heartbeat": {
           "directPolicy": "allow"
+        },
+        "memory": {
+          "backend": "qmd",
+          "citations": "auto",
+          "qmd": {
+            "paths": [
+              {
+                "path": "~/.openclaw/workspace-odin/memory"
+              },
+              {
+                "path": "~/.openclaw/workspace-odin/docs"
+              },
+              {
+                "path": "~/.openclaw/workspace-odin/knowledge"
+              }
+            ],
+            "update": {
+              "interval": "5m",
+              "waitForBootSync": false
+            },
+            "limits": {
+              "maxResults": 8,
+              "maxSnippetChars": 800
+            },
+            "includeDefaultMemory": true
+          }
         }
       },
       {
