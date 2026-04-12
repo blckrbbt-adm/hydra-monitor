@@ -1,7 +1,7 @@
 {
   "meta": {
     "lastTouchedVersion": "2026.3.28",
-    "lastTouchedAt": "2026-04-10T12:56:01.789Z"
+    "lastTouchedAt": "2026-04-12T16:50:47.607Z"
   },
   "env": {
     "MINIMAX_API_KEY": "sk-api-vPxzJq3ZDld9jhdIzyQ6N6VZ1RJ_U559gr95KZspYsB__varbhpjJ61dqoe4x5A-qCS_KtjmIEOaVwCtbtrA0cC1ceEC222QISJfvXNxT1BBKbYQEZ5JEv8",
@@ -12,8 +12,8 @@
     "DEEPSEEK_API_KEY": "sk-09c11b34e966436baeadea2b26d1ca9b"
   },
   "wizard": {
-    "lastRunAt": "2026-03-27T12:31:57.295Z",
-    "lastRunVersion": "2026.3.13",
+    "lastRunAt": "2026-04-12T16:50:47.145Z",
+    "lastRunVersion": "2026.3.28",
     "lastRunCommand": "doctor",
     "lastRunMode": "local"
   },
@@ -474,32 +474,6 @@
         },
         "heartbeat": {
           "directPolicy": "allow"
-        },
-        "memory": {
-          "backend": "qmd",
-          "citations": "auto",
-          "qmd": {
-            "paths": [
-              {
-                "path": "~/.openclaw/workspace-odin/memory"
-              },
-              {
-                "path": "~/.openclaw/workspace-odin/docs"
-              },
-              {
-                "path": "~/.openclaw/workspace-odin/knowledge"
-              }
-            ],
-            "update": {
-              "interval": "5m",
-              "waitForBootSync": false
-            },
-            "limits": {
-              "maxResults": 8,
-              "maxSnippetChars": 800
-            },
-            "includeDefaultMemory": true
-          }
         }
       },
       {
@@ -736,6 +710,22 @@
       "ask": "off"
     }
   },
+  "bindings": [
+    {
+      "agentId": "jag",
+      "match": {
+        "channel": "slack",
+        "accountId": "jag"
+      }
+    },
+    {
+      "agentId": "odin",
+      "match": {
+        "channel": "telegram",
+        "accountId": "odin"
+      }
+    }
+  ],
   "messages": {
     "ackReactionScope": "group-mentions"
   },
@@ -882,13 +872,22 @@
       }
     },
     "slack": {
+      "mode": "socket",
+      "webhookPath": "/slack/events",
       "enabled": true,
+      "userTokenReadOnly": true,
+      "groupPolicy": "allowlist",
       "accounts": {
         "jag": {
           "botToken": "xoxb-10578400195558-10882084456243-XqwPfOqxokP6kWuRx8MiIGlX",
-          "appToken": "xapp-1-A0AS125FETF-10888497554914-e33777ce8ac0057cb5acafcb28917fbefe2868b4aa8d04587e2557dd08136388"
+          "appToken": "xapp-1-A0AS125FETF-10888497554914-e33777ce8ac0057cb5acafcb28917fbefe2868b4aa8d04587e2557dd08136388",
+          "userTokenReadOnly": true,
+          "nativeStreaming": true,
+          "streaming": "partial"
         }
-      }
+      },
+      "nativeStreaming": true,
+      "streaming": "partial"
     }
   },
   "gateway": {
@@ -901,6 +900,30 @@
       "allow": [
         "sessions_send"
       ]
+    }
+  },
+  "memory": {
+    "backend": "qmd",
+    "citations": "auto",
+    "qmd": {
+      "command": "qmd",
+      "includeDefaultMemory": true,
+      "paths": [
+        {
+          "path": "~/.openclaw/workspace-odin/knowledge"
+        },
+        {
+          "path": "~/.openclaw/workspace-odin/docs"
+        }
+      ],
+      "update": {
+        "interval": "5m",
+        "waitForBootSync": false
+      },
+      "limits": {
+        "maxResults": 8,
+        "maxSnippetChars": 800
+      }
     }
   },
   "plugins": {
@@ -924,38 +947,6 @@
             "apiKey": "[REDACTED]"
           }
         }
-      }
-    }
-  },
-  "bindings": [
-    {
-      "agentId": "jag",
-      "match": {
-        "channel": "slack",
-        "accountId": "jag"
-      }
-    },
-    {
-      "agentId": "odin",
-      "match": {
-        "channel": "telegram",
-        "accountId": "odin"
-      }
-    }
-  ],
-  "memory": {
-    "backend": "qmd",
-    "citations": "auto",
-    "qmd": {
-      "command": "node /root/.openclaw/workspace/qmd/dist/qmd.js",
-      "includeDefaultMemory": true,
-      "update": {
-        "interval": "5m",
-        "waitForBootSync": false
-      },
-      "limits": {
-        "maxResults": 6,
-        "maxSnippetChars": 700
       }
     }
   }
