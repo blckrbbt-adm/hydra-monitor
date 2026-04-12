@@ -910,10 +910,7 @@
       "includeDefaultMemory": true,
       "paths": [
         {
-          "path": "~/.openclaw/workspace-odin/knowledge"
-        },
-        {
-          "path": "~/.openclaw/workspace-odin/docs"
+          "path": "knowledge"
         }
       ],
       "update": {
