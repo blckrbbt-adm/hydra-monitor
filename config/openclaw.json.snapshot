@@ -1,7 +1,7 @@
 {
   "meta": {
     "lastTouchedVersion": "2026.4.11",
-    "lastTouchedAt": "2026-04-13T12:02:59.212Z"
+    "lastTouchedAt": "2026-04-13T13:18:48.968Z"
   },
   "env": {
     "MINIMAX_API_KEY": "sk-api-vPxzJq3ZDld9jhdIzyQ6N6VZ1RJ_U559gr95KZspYsB__varbhpjJ61dqoe4x5A-qCS_KtjmIEOaVwCtbtrA0cC1ceEC222QISJfvXNxT1BBKbYQEZ5JEv8",
@@ -9,7 +9,8 @@
     "GEMINI_API_KEY": "AIzaSyAdRkv9YoFVXe1C26FalyGP6CzpLnLUggU",
     "ANTHROPIC_API_KEY": "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",
     "MOONSHOT_KIMI_API_KEY": "sk-RIdI49YpayrBThny7MxB9VOM1NrsBBQnOFIUUm9ybwfAKsSp",
-    "DEEPSEEK_API_KEY": "sk-09c11b34e966436baeadea2b26d1ca9b"
+    "DEEPSEEK_API_KEY": "sk-09c11b34e966436baeadea2b26d1ca9b",
+    "PERPLEXITY_API_KEY": "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"
   },
   "wizard": {
     "lastRunAt": "2026-04-12T16:50:47.145Z",
@@ -397,6 +398,47 @@
             "maxTokens": 200000
           }
         ]
+      },
+      "perplexity": {
+        "baseUrl": "https://api.perplexity.ai",
+        "apiKey": "[REDACTED]",
+        "api": "openai-completions",
+        "models": [
+          {
+            "id": "sonar",
+            "name": "Perplexity Sonar",
+            "api": "openai-completions",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 1,
+              "output": 1,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 127072,
+            "maxTokens": 8192
+          },
+          {
+            "id": "sonar-pro",
+            "name": "Perplexity Sonar Pro",
+            "api": "openai-completions",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 3,
+              "output": 15,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 127072,
+            "maxTokens": 8192
+          }
+        ]
       }
     }
   },
@@ -416,6 +458,7 @@
         "xai/grok-4.20-0309-reasoning": {},
         "xai/grok-4.20-0309-non-reasoning": {},
         "xai/grok-4-1-fast-reasoning": {},
+        "xai/grok-4-1-fast-non-reasoning": {},
         "google/gemini-2.5-flash-exp": {},
         "google/gemini-2.5-flash": {},
         "google/gemini-2.5-flash-lite": {},
@@ -1025,6 +1068,10 @@
       },
       "browser": {
         "enabled": true
+      },
+      "perplexity": {
+        "enabled": true,
+        "config": {}
       }
     }
   }
