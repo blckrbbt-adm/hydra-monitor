@@ -1,7 +1,7 @@
 {
   "meta": {
-    "lastTouchedVersion": "2026.3.28",
-    "lastTouchedAt": "2026-04-12T16:50:47.607Z"
+    "lastTouchedVersion": "2026.4.11",
+    "lastTouchedAt": "2026-04-13T10:49:44.574Z"
   },
   "env": {
     "MINIMAX_API_KEY": "sk-api-vPxzJq3ZDld9jhdIzyQ6N6VZ1RJ_U559gr95KZspYsB__varbhpjJ61dqoe4x5A-qCS_KtjmIEOaVwCtbtrA0cC1ceEC222QISJfvXNxT1BBKbYQEZ5JEv8",
@@ -440,9 +440,11 @@
       "compaction": {
         "memoryFlush": {
           "enabled": true,
-          "softThresholdTokens": 20000,
-          "prompt": "Pre-compaction memory flush. Store durable memories now (use memory/YYYY-MM-DD.md; create memory/ if needed). IMPORTANT: If the file already exists, APPEND new content only and do not overwrite existing entries. If nothing to store, reply with NO_REPLY.\n\nALSO: Before saving, send the user a message: \"\u2615 Hey, I need 5 min to refresh my head \u2014 coffee break!\"\n\nThen save a structured conversation state to memory/active-conversation.md with:\n- What we were working on (current topic/task)\n- Key decisions made this session\n- Where we left off (next steps, pending items)\n- Any open questions or blockers\n- Channel we were talking in\n\nThis file is your reload point after compaction. Make it concise but complete enough to continue seamlessly."
-        }
+          "softThresholdTokens": 40000,
+          "prompt": "Pre-compaction flush. Save any high-signal decisions, blockers, or open tasks as a new artifact in knowledge/session-state/ or intelligence/. Use the standard frontmatter format. If nothing important, reply with NO_REPLY. Do NOT write to memory/ folder or active-conversation.md.",
+          "systemPrompt": "Be extremely concise. Only persist what truly matters for session continuity."
+        },
+        "model": "anthropic/claude-sonnet-4-6"
       },
       "heartbeat": {
         "every": "1h",
@@ -797,7 +799,9 @@
         }
       },
       "groupPolicy": "open",
-      "streaming": "partial",
+      "streaming": {
+        "mode": "partial"
+      },
       "accounts": {
         "saxa": {
           "dmPolicy": "allowlist",
@@ -806,7 +810,9 @@
             "5424743863"
           ],
           "groupPolicy": "open",
-          "streaming": "partial"
+          "streaming": {
+            "mode": "partial"
+          }
         },
         "odin": {
           "dmPolicy": "allowlist",
@@ -815,7 +821,9 @@
             "5424743863"
           ],
           "groupPolicy": "open",
-          "streaming": "partial"
+          "streaming": {
+            "mode": "partial"
+          }
         },
         "nova": {
           "dmPolicy": "allowlist",
@@ -824,7 +832,9 @@
             "5424743863"
           ],
           "groupPolicy": "open",
-          "streaming": "partial"
+          "streaming": {
+            "mode": "partial"
+          }
         },
         "mauzz": {
           "dmPolicy": "allowlist",
@@ -833,12 +843,16 @@
             "5424743863"
           ],
           "groupPolicy": "open",
-          "streaming": "partial"
+          "streaming": {
+            "mode": "partial"
+          }
         },
         "default": {
           "dmPolicy": "pairing",
           "groupPolicy": "open",
-          "streaming": "partial"
+          "streaming": {
+            "mode": "partial"
+          }
         },
         "jag": {
           "dmPolicy": "allowlist",
@@ -847,7 +861,9 @@
             "5424743863"
           ],
           "groupPolicy": "open",
-          "streaming": "partial"
+          "streaming": {
+            "mode": "partial"
+          }
         }
       },
       "defaultAccount": "saxa"
@@ -856,7 +872,9 @@
       "enabled": true,
       "token": "[REDACTED]",
       "groupPolicy": "allowlist",
-      "streaming": "off",
+      "streaming": {
+        "mode": "off"
+      },
       "dmPolicy": "pairing",
       "allowFrom": [
         "714306756611670027"
@@ -873,21 +891,27 @@
     },
     "slack": {
       "mode": "socket",
-      "webhookPath": "/slack/events",
       "enabled": true,
       "userTokenReadOnly": true,
-      "groupPolicy": "allowlist",
       "accounts": {
         "jag": {
           "botToken": "xoxb-10578400195558-10882084456243-XqwPfOqxokP6kWuRx8MiIGlX",
           "appToken": "xapp-1-A0AS125FETF-10888497554914-e33777ce8ac0057cb5acafcb28917fbefe2868b4aa8d04587e2557dd08136388",
           "userTokenReadOnly": true,
-          "nativeStreaming": true,
-          "streaming": "partial"
+          "streaming": {
+            "mode": "partial",
+            "nativeTransport": true
+          }
+        },
+        "default": {
+          "webhookPath": "/slack/events",
+          "groupPolicy": "allowlist"
         }
       },
-      "nativeStreaming": true,
-      "streaming": "partial"
+      "streaming": {
+        "mode": "partial",
+        "nativeTransport": true
+      }
     }
   },
   "gateway": {
@@ -944,6 +968,30 @@
             "apiKey": "[REDACTED]"
           }
         }
+      },
+      "minimax": {
+        "enabled": true
+      },
+      "xai": {
+        "enabled": true
+      },
+      "openai": {
+        "enabled": true
+      },
+      "google": {
+        "enabled": true
+      },
+      "anthropic": {
+        "enabled": true
+      },
+      "deepseek": {
+        "enabled": true
+      },
+      "moonshot": {
+        "enabled": true
+      },
+      "browser": {
+        "enabled": true
       }
     }
   }
