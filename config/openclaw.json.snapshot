@@ -405,7 +405,7 @@
       "model": {
         "primary": "xai/grok-4.20-0309-non-reasoning",
         "fallbacks": [
-          "xai/grok-4-1-fast-reasoning",
+          "xai/grok-4-1-fast-non-reasoning",
           "openai/gpt-5.2",
           "google/gemini-3.0-flash",
           "anthropic/claude-haiku"
@@ -475,7 +475,8 @@
           "primary": "anthropic/claude-sonnet-4-6"
         },
         "heartbeat": {
-          "directPolicy": "allow"
+          "directPolicy": "allow",
+          "model": "xai/grok-4-1-fast-non-reasoning"
         }
       },
       {
@@ -484,7 +485,7 @@
         "workspace": "/root/.openclaw/workspace-thor",
         "agentDir": "/root/.openclaw/agents/thor/agent",
         "model": {
-          "primary": "xai/grok-4.20-0309-reasoning"
+          "primary": "xai/grok-4-1-fast-non-reasoning"
         }
       },
       {
@@ -493,7 +494,7 @@
         "workspace": "/root/.openclaw/workspace-nova",
         "agentDir": "/root/.openclaw/agents/nova/agent",
         "model": {
-          "primary": "xai/grok-4.20-0309-reasoning"
+          "primary": "xai/grok-4-1-fast-non-reasoning"
         },
         "heartbeat": {
           "every": "2h"
@@ -508,7 +509,8 @@
           "primary": "anthropic/claude-sonnet-4-6"
         },
         "heartbeat": {
-          "every": "1d"
+          "every": "1d",
+          "model": "xai/grok-4.20-0309-non-reasoning"
         }
       },
       {
@@ -529,11 +531,11 @@
         "workspace": "/root/.openclaw/workspace-apex",
         "agentDir": "/root/.openclaw/agents/apex/agent",
         "model": {
-          "primary": "xai/grok-4.20-0309-reasoning"
+          "primary": "xai/grok-4.20-0309-non-reasoning"
         },
         "heartbeat": {
           "every": "1h",
-          "model": "xai/grok-4-1-fast-reasoning"
+          "model": "xai/grok-4-1-fast-non-reasoning"
         }
       },
       {
@@ -542,7 +544,11 @@
         "workspace": "/root/.openclaw/workspace-bragi",
         "agentDir": "/root/.openclaw/agents/bragi/agent",
         "model": {
-          "primary": "xai/grok-4.20-0309-reasoning"
+          "primary": "xai/grok-4.20-0309-non-reasoning"
+        },
+        "heartbeat": {
+          "every": "1h",
+          "model": "xai/grok-4-1-fast-non-reasoning"
         }
       },
       {
@@ -551,7 +557,11 @@
         "workspace": "/root/.openclaw/workspace-pixel",
         "agentDir": "/root/.openclaw/agents/pixel/agent",
         "model": {
-          "primary": "xai/grok-4.20-0309-reasoning"
+          "primary": "anthropic/claude-sonnet-4-6"
+        },
+        "heartbeat": {
+          "every": "1d",
+          "model": "xai/grok-4-1-fast-non-reasoning"
         }
       },
       {
@@ -560,7 +570,11 @@
         "workspace": "/root/.openclaw/workspace-forge",
         "agentDir": "/root/.openclaw/agents/forge/agent",
         "model": {
-          "primary": "xai/grok-4.20-0309-reasoning"
+          "primary": "anthropic/claude-sonnet-4-6"
+        },
+        "heartbeat": {
+          "every": "1d",
+          "model": "xai/grok-4-1-fast-non-reasoning"
         }
       },
       {
@@ -569,7 +583,11 @@
         "workspace": "/root/.openclaw/workspace-bridge",
         "agentDir": "/root/.openclaw/agents/bridge/agent",
         "model": {
-          "primary": "xai/grok-4.20-0309-reasoning"
+          "primary": "anthropic/claude-sonnet-4-6"
+        },
+        "heartbeat": {
+          "every": "1d",
+          "model": "xai/grok-4-1-fast-non-reasoning"
         }
       },
       {
@@ -587,7 +605,11 @@
         "workspace": "/root/.openclaw/workspace-gatemaster",
         "agentDir": "/root/.openclaw/agents/gatemaster/agent",
         "model": {
-          "primary": "xai/grok-4.20-0309-reasoning"
+          "primary": "xai/grok-4.20-0309-non-reasoning"
+        },
+        "heartbeat": {
+          "every": "1d",
+          "model": "xai/grok-4-1-fast-non-reasoning"
         }
       },
       {
@@ -596,7 +618,11 @@
         "workspace": "/root/.openclaw/workspace-devops",
         "agentDir": "/root/.openclaw/agents/devops/agent",
         "model": {
-          "primary": "xai/grok-4.20-0309-non-reasoning"
+          "primary": "xai/grok-4-1-fast-non-reasoning"
+        },
+        "heartbeat": {
+          "every": "1h",
+          "model": "xai/grok-4-1-fast-non-reasoning"
         }
       },
       {
@@ -606,6 +632,10 @@
         "agentDir": "/root/.openclaw/agents/alpha/agent",
         "model": {
           "primary": "anthropic/claude-opus-4-6"
+        },
+        "heartbeat": {
+          "every": "1h",
+          "model": "xai/grok-4-1-fast-non-reasoning"
         }
       },
       {
@@ -626,7 +656,7 @@
         "workspace": "/root/.openclaw/workspace-ledger",
         "agentDir": "/root/.openclaw/agents/ledger/agent",
         "model": {
-          "primary": "xai/grok-4-1-fast-reasoning"
+          "primary": "xai/grok-4-1-fast-non-reasoning"
         },
         "heartbeat": {
           "every": "1d"
@@ -638,7 +668,7 @@
         "workspace": "/root/.openclaw/workspace-nexus",
         "agentDir": "/root/.openclaw/agents/nexus/agent",
         "model": {
-          "primary": "xai/grok-4-1-fast-reasoning"
+          "primary": "xai/grok-4-1-fast-non-reasoning"
         },
         "heartbeat": {
           "every": "1d"
@@ -650,7 +680,7 @@
         "workspace": "/root/.openclaw/workspace-aesir",
         "agentDir": "/root/.openclaw/agents/aesir/agent",
         "model": {
-          "primary": "xai/grok-4.20-0309-reasoning"
+          "primary": "xai/grok-4.20-0309-non-reasoning"
         }
       },
       {
