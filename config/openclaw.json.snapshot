@@ -1,7 +1,7 @@
 {
   "meta": {
     "lastTouchedVersion": "2026.4.11",
-    "lastTouchedAt": "2026-04-15T18:50:11.612Z"
+    "lastTouchedAt": "2026-04-16T12:09:47.347Z"
   },
   "env": {
     "MINIMAX_API_KEY": "sk-api-vPxzJq3ZDld9jhdIzyQ6N6VZ1RJ_U559gr95KZspYsB__varbhpjJ61dqoe4x5A-qCS_KtjmIEOaVwCtbtrA0cC1ceEC222QISJfvXNxT1BBKbYQEZ5JEv8",
@@ -824,7 +824,8 @@
       "mode": "enforce",
       "pruneAfter": "7d",
       "maxEntries": 250
-    }
+    },
+    "dmScope": "main"
   },
   "hooks": {
     "enabled": true,
