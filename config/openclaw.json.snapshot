@@ -1030,6 +1030,9 @@
         },
         {
           "path": "intelligence"
+        },
+        {
+          "path": "memory"
         }
       ],
       "update": {
