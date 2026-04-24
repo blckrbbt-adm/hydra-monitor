@@ -784,7 +784,8 @@
           "every": "1d"
         }
       }
-    ]
+    ],
+    "nestedLaneConcurrency": 3
   },
   "tools": {
     "alsoAllow": [
