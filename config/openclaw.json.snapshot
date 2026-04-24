@@ -1,7 +1,7 @@
 {
   "meta": {
     "lastTouchedVersion": "2026.4.11",
-    "lastTouchedAt": "2026-04-23T23:07:11.753Z"
+    "lastTouchedAt": "2026-04-24T16:28:24.588Z"
   },
   "env": {
     "MINIMAX_API_KEY": "sk-api-vPxzJq3ZDld9jhdIzyQ6N6VZ1RJ_U559gr95KZspYsB__varbhpjJ61dqoe4x5A-qCS_KtjmIEOaVwCtbtrA0cC1ceEC222QISJfvXNxT1BBKbYQEZ5JEv8",
@@ -1127,6 +1127,9 @@
       },
       "memory-lancedb": {
         "enabled": false
+      },
+      "brg-grounded-response": {
+        "enabled": true
       }
     },
     "installs": {
