@@ -1146,5 +1146,8 @@
     "slots": {
       "memory": "openclaw-honcho"
     }
+  },
+  "cron": {
+    "sessionRetention": "0m"
   }
 }
