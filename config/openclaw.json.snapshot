@@ -524,7 +524,8 @@
       "contextPruning": {
         "mode": "cache-ttl",
         "ttl": "1h"
-      }
+      },
+      "nestedLaneConcurrency": 3
     },
     "list": [
       {
