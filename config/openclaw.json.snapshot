@@ -58,7 +58,8 @@
               "cacheWrite": 0
             },
             "contextWindow": 400000,
-            "maxTokens": 100000
+            "maxTokens": 100000,
+            "contextTokens": 80000
           },
           {
             "id": "grok-4.20-0309-non-reasoning",
@@ -76,7 +77,8 @@
               "cacheWrite": 0
             },
             "contextWindow": 400000,
-            "maxTokens": 100000
+            "maxTokens": 100000,
+            "contextTokens": 80000
           },
           {
             "id": "grok-4-1-fast-reasoning",
@@ -94,7 +96,8 @@
               "cacheWrite": 0
             },
             "contextWindow": 400000,
-            "maxTokens": 100000
+            "maxTokens": 100000,
+            "contextTokens": 40000
           },
           {
             "id": "grok-4-1-fast-non-reasoning",
@@ -112,7 +115,8 @@
               "cacheWrite": 0
             },
             "contextWindow": 400000,
-            "maxTokens": 100000
+            "maxTokens": 100000,
+            "contextTokens": 40000
           }
         ]
       },
@@ -566,7 +570,7 @@
         "workspace": "/root/.openclaw/workspace-nova",
         "agentDir": "/root/.openclaw/agents/nova/agent",
         "model": {
-          "primary": "xai/grok-4-1-fast-non-reasoning"
+          "primary": "xai/grok-4.20-0309-non-reasoning"
         },
         "heartbeat": {
           "every": "2h"
