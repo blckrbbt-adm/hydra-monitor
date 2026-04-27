@@ -1,7 +1,7 @@
 {
   "meta": {
     "lastTouchedVersion": "2026.4.11",
-    "lastTouchedAt": "2026-04-24T16:28:24.588Z"
+    "lastTouchedAt": "2026-04-27T01:09:02.340Z"
   },
   "env": {
     "MINIMAX_API_KEY": "sk-api-vPxzJq3ZDld9jhdIzyQ6N6VZ1RJ_U559gr95KZspYsB__varbhpjJ61dqoe4x5A-qCS_KtjmIEOaVwCtbtrA0cC1ceEC222QISJfvXNxT1BBKbYQEZ5JEv8",
@@ -529,7 +529,8 @@
         "mode": "cache-ttl",
         "ttl": "1h"
       },
-      "nestedLaneConcurrency": 3
+      "nestedLaneConcurrency": 3,
+      "timeoutSeconds": 120
     },
     "list": [
       {
