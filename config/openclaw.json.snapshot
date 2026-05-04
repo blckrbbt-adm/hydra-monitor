@@ -1,7 +1,7 @@
 {
   "meta": {
     "lastTouchedVersion": "2026.4.11",
-    "lastTouchedAt": "2026-04-27T01:09:02.340Z"
+    "lastTouchedAt": "2026-05-04T17:26:50.161Z"
   },
   "env": {
     "MINIMAX_API_KEY": "sk-api-vPxzJq3ZDld9jhdIzyQ6N6VZ1RJ_U559gr95KZspYsB__varbhpjJ61dqoe4x5A-qCS_KtjmIEOaVwCtbtrA0cC1ceEC222QISJfvXNxT1BBKbYQEZ5JEv8",
@@ -840,6 +840,13 @@
         "channel": "telegram",
         "accountId": "mauzz"
       }
+    },
+    {
+      "agentId": "quantum",
+      "match": {
+        "channel": "telegram",
+        "accountId": "quantum"
+      }
     }
   ],
   "messages": {
@@ -972,6 +979,17 @@
         "jag": {
           "dmPolicy": "allowlist",
           "botToken": "8269980524:AAFWqzH2zv5wNVgHw-VLkFhp9Tn4u-iC6C4",
+          "allowFrom": [
+            "5424743863"
+          ],
+          "groupPolicy": "open",
+          "streaming": {
+            "mode": "partial"
+          }
+        },
+        "quantum": {
+          "dmPolicy": "allowlist",
+          "botToken": "8269929806:AAEo_kcGoJDMPqH7Jcwn3nBUZtaP-Z-ka9k",
           "allowFrom": [
             "5424743863"
           ],
